@@ -2,6 +2,8 @@ import { Composition, Folder } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
 import { Title } from "./HelloWorld/Title";
+import { BrandMark } from "./Intro/BrandMark";
+import { Intro } from "./Intro/Intro";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -33,7 +35,27 @@ export const RemotionRoot: React.FC = () => {
             titleColor: "#000000",
           }}
         />
+        <Composition
+          id="BrandMark"
+          component={BrandMark}
+          durationInFrames={60}
+          fps={30}
+          width={1920}
+          height={1080}
+          defaultProps={{
+            primaryColor: "#6C8CFF",
+            secondaryColor: "#36E2C4",
+          }}
+        />
       </Folder>
+      <Composition
+        id="Intro"
+        component={Intro}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
       <Composition
         // You can take the "id" to render a video:
         // bunx remotion render HelloWorld
